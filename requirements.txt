@@ -1,0 +1,6 @@
+allure-pytest
+requests
+pytest
+pytest-xdist
+pytest-order
+python-dotenv
