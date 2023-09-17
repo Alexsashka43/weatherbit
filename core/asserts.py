@@ -49,3 +49,8 @@ class Asserts:
     def assert_text_fail(response: Response, text: str):
         assert response.json()["error"] == text, \
             f'Expected text: {text}, actual text: {response.json()["error"]}'
+
+    @staticmethod
+    def assert_correct_type(response: Response, key: str, type_answer: type):
+        assert isinstance(response.json()['data'][0][f"{key}"], type_answer), \
+            f'Expected type: {type_answer}, actual type: {type(response.json()["data"][0][f"{key}"])}'
